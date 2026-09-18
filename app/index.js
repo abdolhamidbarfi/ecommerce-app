@@ -23,6 +23,7 @@ module.exports = class Application {
         await this.setMongoConnection();
         this.setConfig();
         this.setupExpress();
+        this.setRouters();
     }
 
     setupExpress() {
@@ -64,9 +65,10 @@ module.exports = class Application {
         app.use(cookieParser("secret_key"));
 
         app.use(flash());
+    }
 
-        app.get("/", (req, res) => {
-            res.json("Hello World");
-        });
+    setRouters() {
+        app.use(require("./routes/web"));
+        app.use("/api", require("./routes/api"));
     }
 };
