@@ -1,6 +1,12 @@
-class homeController {
+const controller = require("./controller");
+
+class homeController extends controller {
     index(req, res) {
-        res.json("Home Page");
+        res.json(this.message());
+    }
+
+    message() {
+        return "Home Page";
     }
 }
 

@@ -6,6 +6,6 @@ const router = express.Router();
 const homeController = require("../../../http/controllers/homeController");
 
 // Home Routes
-router.get("/", homeController.index.bind(homeController));
+router.get("/", homeController.index);
 
 module.exports = router;
