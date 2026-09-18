@@ -68,7 +68,7 @@ module.exports = class Application {
     }
 
     setRouters() {
-        app.use(require("./routes/web"));
-        app.use("/api", require("./routes/api"));
+        app.use(require("app/routes/web"));
+        app.use("/api", require("app/routes/api"));
     }
 };
